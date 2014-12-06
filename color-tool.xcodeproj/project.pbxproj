@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		052671B41A336EE600B67913 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052671B31A336EE600B67913 /* main.swift */; };
+		052671BB1A336FAA00B67913 /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052671BA1A336FAA00B67913 /* ColorList.swift */; };
+		052671BD1A33707F00B67913 /* SimpleColorListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052671BC1A33707F00B67913 /* SimpleColorListParser.swift */; };
+		052671C01A3370B700B67913 /* ColorListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052671BF1A3370B700B67913 /* ColorListParser.swift */; };
+		05A0EB871A337C2300154323 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EB861A337C2300154323 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,11 @@
 /* Begin PBXFileReference section */
 		052671B01A336EE600B67913 /* color-tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "color-tool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		052671B31A336EE600B67913 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		052671BA1A336FAA00B67913 /* ColorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
+		052671BC1A33707F00B67913 /* SimpleColorListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleColorListParser.swift; sourceTree = "<group>"; };
+		052671BF1A3370B700B67913 /* ColorListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorListParser.swift; sourceTree = "<group>"; };
+		052671C11A3371A500B67913 /* sample.scl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.scl; sourceTree = "<group>"; };
+		05A0EB861A337C2300154323 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +50,7 @@
 		052671A71A336EE600B67913 = {
 			isa = PBXGroup;
 			children = (
-				052671B21A336EE600B67913 /* color-tool */,
+				052671B21A336EE600B67913 /* Sources */,
 				052671B11A336EE600B67913 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +63,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		052671B21A336EE600B67913 /* color-tool */ = {
+		052671B21A336EE600B67913 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				052671B31A336EE600B67913 /* main.swift */,
+				052671C11A3371A500B67913 /* sample.scl */,
+				052671BE1A33708300B67913 /* Parsers */,
+				05A0EB861A337C2300154323 /* Logger.swift */,
 			);
-			path = "color-tool";
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		052671BE1A33708300B67913 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				052671BA1A336FAA00B67913 /* ColorList.swift */,
+				052671BF1A3370B700B67913 /* ColorListParser.swift */,
+				052671BC1A33707F00B67913 /* SimpleColorListParser.swift */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A0EB871A337C2300154323 /* Logger.swift in Sources */,
+				052671C01A3370B700B67913 /* ColorListParser.swift in Sources */,
+				052671BD1A33707F00B67913 /* SimpleColorListParser.swift in Sources */,
 				052671B41A336EE600B67913 /* main.swift in Sources */,
+				052671BB1A336FAA00B67913 /* ColorList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +178,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -188,6 +215,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -233,6 +261,7 @@
 				052671B91A336EE600B67913 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

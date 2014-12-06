@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 konoma GmbH. All rights reserved.
 //
 
-import Foundation
+import AppKit
 
 
 struct ColorList: Printable {
     
     let name: String
-    let colors: [Color]
+    let colors: [NamedColor]
     
     var description: String {
         return "<ColorList name='\(name)' colors=\(colors)>"
@@ -20,12 +20,12 @@ struct ColorList: Printable {
 }
 
 
-struct Color: Printable {
+struct NamedColor: Printable {
     
     let name: String
-    let hexValue: String
+    let color: NSColor
     
     var description: String {
-        return "<Color name='\(name)' hexValue=#\(hexValue)>"
+        return "<Color name='\(name)' color=\(color)>"
     }
 }

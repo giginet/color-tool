@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 konoma GmbH. All rights reserved.
 //
 
-import Foundation
+import AppKit
 
 
 class SimpleColorListParser: BaseColorListParser {
@@ -27,7 +27,7 @@ class SimpleColorListParser: BaseColorListParser {
         return ColorList(name: fileName ?? "", colors: colors)
     }
     
-    private func colorFromSimpleColorEntry(entry: String) -> Color? {
+    private func colorFromSimpleColorEntry(entry: String) -> NamedColor? {
         let blankEntry = entry.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
         if entry.isEmpty || entry.hasPrefix("#") {
@@ -42,10 +42,15 @@ class SimpleColorListParser: BaseColorListParser {
             return nil // Illegal entry or whitespace
         }
         
-        let color = entry.substringToIndex(separatorIndex)
+        let colorHex = entry.substringToIndex(separatorIndex)
+        let color = NSColor.fromRGBAString(colorHex)
         let name = entry.substringFromIndex(advance(separatorIndex, 1))
             .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
-        return Color(name: name, hexValue: color)
+        if color == nil {
+            return nil
+        }
+        
+        return NamedColor(name: name, color: color!)
     }
 }

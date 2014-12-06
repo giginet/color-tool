@@ -35,3 +35,8 @@ struct Log {
         println(message)
     }
 }
+
+func fail(message: String, exitCode: Int32 = 1) {
+    Log.error(message)
+    exit(exitCode)
+}

@@ -11,12 +11,12 @@ import Foundation
 
 Log.applicationName = Process.arguments[0].lastPathComponent
 
+let manager = Manager()
 
-let fileURL = NSURL(fileURLWithPath: "/Users/alfonso/Development/color-tool/Sources/sample.scl")!
-var error: NSError?
+manager.register(CreateColorListCommand())
 
-if let colorList = SimpleColorListParser().parseFile(fileURL, error: &error) {
-    println("Color List: \(colorList)")
-} else {
-    println("Error: \(error)")
+manager.register("create-clr", "Create an Apple color list (.clr)") { argv in
+    CreateColorListCommand().run(argv)
 }
+
+manager.run()

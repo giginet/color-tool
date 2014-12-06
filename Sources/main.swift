@@ -14,9 +14,5 @@ Log.applicationName = Process.arguments[0].lastPathComponent
 let manager = Manager()
 
 manager.register(CreateColorListCommand())
-
-manager.register("create-clr", "Create an Apple color list (.clr)") { argv in
-    CreateColorListCommand().run(argv)
-}
-
+manager.register(CreateConstantsCommand())
 manager.run()

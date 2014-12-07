@@ -1,1 +1,4 @@
 color-tool.xcodeproj/xcuserdata
+.DS_Store
+*.xccheckout
+color-tool.xcodeproj/project.xcworkspace/xcuserdata

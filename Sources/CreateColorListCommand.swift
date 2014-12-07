@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 konoma GmbH. All rights reserved.
 //
 
-import Foundation
 import AppKit
 
 

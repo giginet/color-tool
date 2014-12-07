@@ -20,6 +20,9 @@
 		05A0EBB31A338EB600154323 /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EBB21A338EB600154323 /* NSColor+Hex.swift */; };
 		05A0EBB51A33A3A600154323 /* ColorToolCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EBB41A33A3A600154323 /* ColorToolCommand.swift */; };
 		05A0EBB71A33A57D00154323 /* CreateConstantsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EBB61A33A57D00154323 /* CreateConstantsCommand.swift */; };
+		63A2429B1A345E610079D07D /* SwiftConstantsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */; };
+		63A242A21A3463600079D07D /* CreateGuideCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A242A11A3463600079D07D /* CreateGuideCommand.swift */; };
+		63A242A41A3463C10079D07D /* PDFGuideGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +53,9 @@
 		05A0EBB21A338EB600154323 /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		05A0EBB41A33A3A600154323 /* ColorToolCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorToolCommand.swift; sourceTree = "<group>"; };
 		05A0EBB61A33A57D00154323 /* CreateConstantsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConstantsCommand.swift; sourceTree = "<group>"; };
+		63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftConstantsGenerator.swift; sourceTree = "<group>"; };
+		63A242A11A3463600079D07D /* CreateGuideCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGuideCommand.swift; sourceTree = "<group>"; };
+		63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGuideGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				052671B21A336EE600B67913 /* Sources */,
+				63A2429C1A3460A40079D07D /* Sample Data */,
 				052671B11A336EE600B67913 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,22 +90,22 @@
 			isa = PBXGroup;
 			children = (
 				052671B31A336EE600B67913 /* main.swift */,
-				052671C11A3371A500B67913 /* sample.scl */,
 				05A0EBAC1A33862F00154323 /* Commands */,
-				052671BE1A33708300B67913 /* Parsers */,
+				052671BE1A33708300B67913 /* Color File Parsers */,
+				63A242991A345E460079D07D /* Output Generators */,
 				05A0EBAB1A33862000154323 /* Util */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		052671BE1A33708300B67913 /* Parsers */ = {
+		052671BE1A33708300B67913 /* Color File Parsers */ = {
 			isa = PBXGroup;
 			children = (
 				052671BA1A336FAA00B67913 /* ColorList.swift */,
 				052671BF1A3370B700B67913 /* ColorListParser.swift */,
 				052671BC1A33707F00B67913 /* SimpleColorListParser.swift */,
 			);
-			name = Parsers;
+			name = "Color File Parsers";
 			sourceTree = "<group>";
 		};
 		05A0EBAA1A33835800154323 /* CLIKit */ = {
@@ -116,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				05A0EB861A337C2300154323 /* Logger.swift */,
-				05A0EBAA1A33835800154323 /* CLIKit */,
 				05A0EBB21A338EB600154323 /* NSColor+Hex.swift */,
+				05A0EBAA1A33835800154323 /* CLIKit */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -128,8 +135,27 @@
 				05A0EBB41A33A3A600154323 /* ColorToolCommand.swift */,
 				05A0EBAD1A33864E00154323 /* CreateColorListCommand.swift */,
 				05A0EBB61A33A57D00154323 /* CreateConstantsCommand.swift */,
+				63A242A11A3463600079D07D /* CreateGuideCommand.swift */,
 			);
 			name = Commands;
+			sourceTree = "<group>";
+		};
+		63A242991A345E460079D07D /* Output Generators */ = {
+			isa = PBXGroup;
+			children = (
+				63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */,
+				63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */,
+			);
+			name = "Output Generators";
+			sourceTree = "<group>";
+		};
+		63A2429C1A3460A40079D07D /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				052671C11A3371A500B67913 /* sample.scl */,
+			);
+			name = "Sample Data";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				05A0EB871A337C2300154323 /* Logger.swift in Sources */,
+				63A242A41A3463C10079D07D /* PDFGuideGenerator.swift in Sources */,
+				63A242A21A3463600079D07D /* CreateGuideCommand.swift in Sources */,
 				05A0EBB51A33A3A600154323 /* ColorToolCommand.swift in Sources */,
 				05A0EBA61A33835300154323 /* ARGV.swift in Sources */,
 				05A0EBB31A338EB600154323 /* NSColor+Hex.swift in Sources */,
@@ -197,6 +225,7 @@
 				05A0EBA81A33835300154323 /* HelpCommand.swift in Sources */,
 				05A0EBA71A33835300154323 /* Command.swift in Sources */,
 				052671B41A336EE600B67913 /* main.swift in Sources */,
+				63A2429B1A345E610079D07D /* SwiftConstantsGenerator.swift in Sources */,
 				05A0EBB71A33A57D00154323 /* CreateConstantsCommand.swift in Sources */,
 				05A0EBAE1A33864E00154323 /* CreateColorListCommand.swift in Sources */,
 				05A0EBA91A33835300154323 /* Manager.swift in Sources */,

@@ -12,7 +12,7 @@ import Foundation
 Log.applicationName = Process.arguments[0].lastPathComponent
 
 let manager = Manager()
-
 manager.register(CreateColorListCommand())
 manager.register(CreateConstantsCommand())
+manager.register(CreateGuideCommand())
 manager.run()

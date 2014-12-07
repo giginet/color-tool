@@ -12,20 +12,26 @@ import Foundation
 class CreateConstantsCommand: ColorToolCommand {
     
     init() {
-        super.init("create-consts", "Create a color constants source file")
+        super.init("create-constants", "Create a color constants source file")
     }
     
     override func run(colors: ColorList, inputURL: NSURL, argv: ARGV) {
         if argv.arguments.count > 1 {
             fail("Too many arguments passed")
         }
-        
+
+        let format = argv.option("format")
+        let generator = generatorForFormat(format ?? "swift")
+        if generator == nil {
+            let none = "none"
+            fail("Unknown constants format: \(format ?? none)")
+        }
+
         let outputDirectoryURL = URLFromArguments(argv) ?? inputURL.URLByDeletingLastPathComponent!
-        writeSwiftConstants(colors, inputFileURL: inputURL, outputDirectoryURL: outputDirectoryURL)
+        writeConstants(colors, withGenerator: generator!, inputFileURL: inputURL, outputDirectoryURL: outputDirectoryURL)
     }
     
-    private func writeSwiftConstants(colors: ColorList, inputFileURL: NSURL, outputDirectoryURL: NSURL) {
-        let generator = SwiftConstantsGenerator()
+    private func writeConstants(colors: ColorList, withGenerator generator: ConstantsGenerator, inputFileURL: NSURL, outputDirectoryURL: NSURL) {
         let fileURL = outputDirectoryURL.URLByAppendingPathComponent(generator.fileNameFor(colors, inputURL: inputFileURL))
 
         var error: NSError?

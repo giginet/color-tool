@@ -51,4 +51,8 @@ extension NSColor {
         b *= 0.75
         return NSColor(deviceHue: h, saturation: s, brightness: b, alpha: a)
     }
+
+    var hexString: String {
+        return NSString(format: "#%02X%02X%02X", Int(self.redComponent * 255.0), Int(self.greenComponent * 255.0), Int(self.blueComponent * 255.0))
+    }
 }

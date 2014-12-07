@@ -23,6 +23,8 @@
 		63A2429B1A345E610079D07D /* SwiftConstantsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */; };
 		63A242A21A3463600079D07D /* CreateGuideCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A242A11A3463600079D07D /* CreateGuideCommand.swift */; };
 		63A242A41A3463C10079D07D /* PDFGuideGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */; };
+		63A936C41A3493780063C9FE /* ConstantsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A936C31A3493780063C9FE /* ConstantsGenerator.swift */; };
+		63A936C61A3493C10063C9FE /* SCSSConstantsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A936C51A3493C10063C9FE /* SCSSConstantsGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +58,8 @@
 		63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftConstantsGenerator.swift; sourceTree = "<group>"; };
 		63A242A11A3463600079D07D /* CreateGuideCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGuideCommand.swift; sourceTree = "<group>"; };
 		63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGuideGenerator.swift; sourceTree = "<group>"; };
+		63A936C31A3493780063C9FE /* ConstantsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsGenerator.swift; sourceTree = "<group>"; };
+		63A936C51A3493C10063C9FE /* SCSSConstantsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSSConstantsGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +147,9 @@
 		63A242991A345E460079D07D /* Output Generators */ = {
 			isa = PBXGroup;
 			children = (
+				63A936C31A3493780063C9FE /* ConstantsGenerator.swift */,
 				63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */,
+				63A936C51A3493C10063C9FE /* SCSSConstantsGenerator.swift */,
 				63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */,
 			);
 			name = "Output Generators";
@@ -214,8 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A936C41A3493780063C9FE /* ConstantsGenerator.swift in Sources */,
 				05A0EB871A337C2300154323 /* Logger.swift in Sources */,
 				63A242A41A3463C10079D07D /* PDFGuideGenerator.swift in Sources */,
+				63A936C61A3493C10063C9FE /* SCSSConstantsGenerator.swift in Sources */,
 				63A242A21A3463600079D07D /* CreateGuideCommand.swift in Sources */,
 				05A0EBB51A33A3A600154323 /* ColorToolCommand.swift in Sources */,
 				05A0EBA61A33835300154323 /* ARGV.swift in Sources */,

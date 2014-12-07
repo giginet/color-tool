@@ -86,7 +86,7 @@ class PDFGuideGenerator {
         // draw the hex rgb value
         let hexY = (rect.minY + (partHeight / 3.0))
         self.drawText("hex", atPoint: CGPoint(x: rect.minX, y: hexY + 1.0), fontSize: 8.0, color: self.lightTextColor)
-        self.drawText(self.hexStringForColor(entry.color), atPoint: CGPoint(x: (rect.minX + 20.0), y: hexY), fontSize: 10.0, color: self.textColor)
+        self.drawText(entry.color.hexString, atPoint: CGPoint(x: (rect.minX + 20.0), y: hexY), fontSize: 10.0, color: self.textColor)
 
         // draw the decimal rgb value
         let rgbY = rect.minY
@@ -127,10 +127,6 @@ class PDFGuideGenerator {
         CGPDFContextEndPage(pdfContext)
         CGPDFContextBeginPage(pdfContext, nil)
         return CGPoint(x: self.contentBounds.minX, y: (self.contentBounds.maxY - self.entrySize.height))
-    }
-
-    private func hexStringForColor(color: NSColor) -> String {
-        return NSString(format: "#%02X%02X%02X", Int(color.redComponent * 255.0), Int(color.greenComponent * 255.0), Int(color.blueComponent * 255.0))
     }
 
     private func rgbStringForColor(color: NSColor) -> String {

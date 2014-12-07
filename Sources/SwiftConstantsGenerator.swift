@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 
 
-class SwiftConstantsGenerator {
+class SwiftConstantsGenerator: ConstantsGenerator {
 
     // MARK: - Public API
 

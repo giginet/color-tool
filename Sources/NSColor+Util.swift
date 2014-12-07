@@ -40,4 +40,15 @@ extension NSColor {
         
         return NSColor(deviceRed:red, green:green, blue:blue, alpha:alpha)
     }
+
+    func darkerColor() -> NSColor {
+        var h: CGFloat = 0.0
+        var s: CGFloat = 0.0
+        var b: CGFloat = 0.0
+        var a: CGFloat = 0.0
+
+        self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        b *= 0.75
+        return NSColor(deviceHue: h, saturation: s, brightness: b, alpha: a)
+    }
 }

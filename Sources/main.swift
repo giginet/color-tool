@@ -11,7 +11,7 @@ import Foundation
 
 Log.applicationName = Process.arguments[0].lastPathComponent
 
-let manager = Manager()
+let manager = Manager(version: "1.0.0")
 manager.register(CreateColorListCommand())
 manager.register(CreateConstantsCommand())
 manager.register(CreateGuideCommand())

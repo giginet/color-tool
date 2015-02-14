@@ -21,7 +21,7 @@ class CreateConstantsCommand: ColorToolCommand {
         }
 
         let format = argv.option("format")
-        let generator = generatorForFormat(format ?? "swift")
+        let generator = generatorForFormat(format ?? "swift", prefix: argv.option("prefix"))
         if generator == nil {
             let none = "none"
             fail("Unknown constants format: \(format ?? none)")

@@ -38,14 +38,19 @@ the file extension is changed to `.clr`.
 
 ### Generating Code Constants
 
-`color-tool create-constants --format=format /path/to/input.scl /path/to/output-file`
+`color-tool create-constants --format=format --prefix=prefix /path/to/input.scl /path/to/output-file`
 
 Generates code constants from the colors.
 
 The output path is optional. If the path is omitted or a directory the input file name is taken and
 the file extension is changed according to the specified format.
 
-Supported formats are `swift` and `scss`. If the format parameter is omitted, `swift` is assumed.
+
+Valid Options:
+
+*	--format: `swift`, `scss` or `android`. If the format parameter is omitted, `swift` is assumed.
+*	--prefix (optional): An optional prefix which gets added first before the name. Example: $prefix- for `scss`, prefix_ for `android`. Swift does not need it since it's already scoped in a Struct
+
 
 Sample swift constants:
 
@@ -66,6 +71,16 @@ Sample SCSS constants:
     $my-beautiful-color: #00AAFF;
     $another-one: #332211;
     $and-yet-another-one: #123456;
+    
+  
+Sample Android colors.xml:
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<resources>
+		<color name="my_beautiful_color">#00AAFF</color>
+		<color name="another_one">#332211</color>
+		<color name="and_yet_another_one">#123456</color>
+	</resources>
 
 
 ### Generating a PDF Color Guide

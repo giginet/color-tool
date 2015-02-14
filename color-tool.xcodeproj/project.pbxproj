@@ -20,6 +20,7 @@
 		05A0EBB31A338EB600154323 /* NSColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EBB21A338EB600154323 /* NSColor+Util.swift */; };
 		05A0EBB51A33A3A600154323 /* ColorToolCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EBB41A33A3A600154323 /* ColorToolCommand.swift */; };
 		05A0EBB71A33A57D00154323 /* CreateConstantsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0EBB61A33A57D00154323 /* CreateConstantsCommand.swift */; };
+		59C214FD1A8F5D2C00C4A0F3 /* AndroidConstantsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C214FC1A8F5D2C00C4A0F3 /* AndroidConstantsGenerator.swift */; };
 		63A2429B1A345E610079D07D /* SwiftConstantsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */; };
 		63A242A21A3463600079D07D /* CreateGuideCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A242A11A3463600079D07D /* CreateGuideCommand.swift */; };
 		63A242A41A3463C10079D07D /* PDFGuideGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */; };
@@ -55,6 +56,7 @@
 		05A0EBB21A338EB600154323 /* NSColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Util.swift"; sourceTree = "<group>"; };
 		05A0EBB41A33A3A600154323 /* ColorToolCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorToolCommand.swift; sourceTree = "<group>"; };
 		05A0EBB61A33A57D00154323 /* CreateConstantsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConstantsCommand.swift; sourceTree = "<group>"; };
+		59C214FC1A8F5D2C00C4A0F3 /* AndroidConstantsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidConstantsGenerator.swift; sourceTree = "<group>"; };
 		63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftConstantsGenerator.swift; sourceTree = "<group>"; };
 		63A242A11A3463600079D07D /* CreateGuideCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGuideCommand.swift; sourceTree = "<group>"; };
 		63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGuideGenerator.swift; sourceTree = "<group>"; };
@@ -148,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				63A936C31A3493780063C9FE /* ConstantsGenerator.swift */,
-				63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */,
+				59C214FC1A8F5D2C00C4A0F3 /* AndroidConstantsGenerator.swift */,
 				63A936C51A3493C10063C9FE /* SCSSConstantsGenerator.swift */,
+				63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */,
 				63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */,
 			);
 			name = "Output Generators";
@@ -224,6 +227,7 @@
 				05A0EB871A337C2300154323 /* Logger.swift in Sources */,
 				63A242A41A3463C10079D07D /* PDFGuideGenerator.swift in Sources */,
 				63A936C61A3493C10063C9FE /* SCSSConstantsGenerator.swift in Sources */,
+				59C214FD1A8F5D2C00C4A0F3 /* AndroidConstantsGenerator.swift in Sources */,
 				63A242A21A3463600079D07D /* CreateGuideCommand.swift in Sources */,
 				05A0EBB51A33A3A600154323 /* ColorToolCommand.swift in Sources */,
 				05A0EBA61A33835300154323 /* ARGV.swift in Sources */,

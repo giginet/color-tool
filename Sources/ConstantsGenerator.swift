@@ -23,6 +23,9 @@ func generatorForFormat(format: String) -> ConstantsGenerator? {
     case "scss":
         return SCSSConstantsGenerator()
 
+    case "android":
+        return AndroidConstantsGenerator()
+        
     default:
         return nil
     }

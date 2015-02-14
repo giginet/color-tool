@@ -11,13 +11,19 @@ import Foundation
 
 public class Manager {
     public var commands = [Command]()
+    public var version: String
 
-    public init() {
+    public init(version: String) {
+        self.version = version
     }
     
     lazy var defaultCommand: Command = {
         ClosureCommand(name: "", description: "The default command") { argv in
-            println("No command specified")
+            if argv.flag("version") == true {
+                println(self.version)
+            } else {
+                println("No command specified")
+            }
         }
     }()
 

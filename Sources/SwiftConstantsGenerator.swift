@@ -11,8 +11,10 @@ import AppKit
 
 
 class SwiftConstantsGenerator: ConstantsGenerator {
-
+    
     // MARK: - Public API
+    
+    required init(prefix: String?) {  }
 
     func fileNameFor(colorList: ColorList, inputURL: NSURL) -> String {
         let inputFileName = inputURL.URLByDeletingPathExtension?.lastPathComponent!

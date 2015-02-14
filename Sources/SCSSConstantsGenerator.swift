@@ -10,8 +10,13 @@ import AppKit
 
 
 class SCSSConstantsGenerator: ConstantsGenerator {
+    
+    private var prefix: String?
 
+    
     // MARK: - Public API
+    
+    required init(prefix initialPrefix: String?) { prefix = initialPrefix }
 
     func fileNameFor(colorList: ColorList, inputURL: NSURL) -> String {
         let inputFileName = inputURL.URLByDeletingPathExtension?.lastPathComponent!
@@ -39,13 +44,16 @@ class SCSSConstantsGenerator: ConstantsGenerator {
     }
 
     private func scssEntry(namedColor: NamedColor) -> String {
-        return "\(scssPropertyName(namedColor.name)): \(scssColorDeclaration(namedColor.color));"
+        var entry = (self.prefix != nil) ? "$\(self.prefix!)-" : ""
+        entry += "\(scssPropertyName(namedColor.name)): \(scssColorDeclaration(namedColor.color));"
+        return entry
     }
 
     private func scssPropertyName(name: String) -> String {
         let disallowedChars = NSCharacterSet.alphanumericCharacterSet().invertedSet
         var components = name.componentsSeparatedByCharactersInSet(disallowedChars)
-        return "$" + join("-", components.map { $0.lowercaseString })
+        let start = (self.prefix != nil) ? "" : "$"
+        return start + join("-", components.map { $0.lowercaseString })
     }
 
     private func scssColorDeclaration(color: NSColor) -> String {

@@ -49,7 +49,7 @@ the file extension is changed according to the specified format.
 Valid Options:
 
 *	--format: `swift`, `scss` or `android`. If the format parameter is omitted, `swift` is assumed.
-*	--prefix (optional): An optional prefix which gets added first before the name. Example: $prefix- for `scss`, prefix_ for `android`, prefixMyProperty for `swift`
+*	--prefix (optional): An optional prefix which gets added first before the name. Example: $prefix- for `scss`, prefix_ for `android`. Swift does not need it since it's already scoped in a Struct
 
 
 Sample swift constants:

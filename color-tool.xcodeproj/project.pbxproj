@@ -150,10 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				63A936C31A3493780063C9FE /* ConstantsGenerator.swift */,
-				63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */,
-				63A936C51A3493C10063C9FE /* SCSSConstantsGenerator.swift */,
-				63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */,
 				59C214FC1A8F5D2C00C4A0F3 /* AndroidConstantsGenerator.swift */,
+				63A936C51A3493C10063C9FE /* SCSSConstantsGenerator.swift */,
+				63A2429A1A345E610079D07D /* SwiftConstantsGenerator.swift */,
+				63A242A31A3463C10079D07D /* PDFGuideGenerator.swift */,
 			);
 			name = "Output Generators";
 			sourceTree = "<group>";

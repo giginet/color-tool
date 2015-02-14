@@ -19,7 +19,7 @@ public class Manager {
     
     lazy var defaultCommand: Command = {
         ClosureCommand(name: "", description: "The default command") { argv in
-            if let version = argv.flag("version") {
+            if argv.flag("version") == true {
                 println(self.version)
             } else {
                 println("No command specified")

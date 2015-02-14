@@ -17,7 +17,9 @@ class AndroidConstantsGenerator: ConstantsGenerator {
     
     // MARK: - Public API
     
-    required init(prefix initialPrefix: String?) { prefix = initialPrefix }
+    required init(prefix: String?) {
+        self.prefix = prefix
+    }
     
     func fileNameFor(colorList: ColorList, inputURL: NSURL) -> String {
         let inputFileName = inputURL.URLByDeletingPathExtension?.lastPathComponent!

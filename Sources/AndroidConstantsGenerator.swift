@@ -12,7 +12,14 @@ import AppKit
 
 class AndroidConstantsGenerator: ConstantsGenerator {
     
+    private var prefix: String?
+    
+    
     // MARK: - Public API
+    
+    required init(prefix: String?) {
+        self.prefix = prefix
+    }
     
     func fileNameFor(colorList: ColorList, inputURL: NSURL) -> String {
         let inputFileName = inputURL.URLByDeletingPathExtension?.lastPathComponent!
@@ -41,7 +48,8 @@ class AndroidConstantsGenerator: ConstantsGenerator {
     }
     
     private func androidEntry(namedColor: NamedColor) -> String {
-        return "<color name=\"\(androidPropertyName(namedColor.name))\">\(namedColor.color.hexString)</color>"
+        let start = (self.prefix != nil) ? "\(self.prefix!)_" : ""
+        return "<color name=\"\(start)\(androidPropertyName(namedColor.name))\">\(namedColor.color.hexString)</color>"
     }
     
     private func androidPropertyName(name: String) -> String {

@@ -130,6 +130,6 @@ class PDFGuideGenerator {
     }
 
     private func rgbStringForColor(color: NSColor) -> String {
-        return NSString(format: "%d / %d / %d", Int(color.redComponent * 255.0), Int(color.greenComponent * 255.0), Int(color.blueComponent * 255.0))
+        return NSString(format: "%d / %d / %d", Int(color.redComponent * 255.0), Int(color.greenComponent * 255.0), Int(color.blueComponent * 255.0)) as String
     }
 }

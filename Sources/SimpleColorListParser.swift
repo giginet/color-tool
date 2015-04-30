@@ -12,7 +12,7 @@ import AppKit
 class SimpleColorListParser: BaseColorListParser {
     
     override func parseFile(contents: NSData, url: NSURL, error: NSErrorPointer) -> ColorList? {
-        if let stringContent = NSString(data: contents, encoding: NSUTF8StringEncoding) {
+        if let stringContent = NSString(data: contents, encoding: NSUTF8StringEncoding) as? String {
             return parseFile(stringContent, url: url, error: error)
         } else {
             return nil
@@ -32,7 +32,7 @@ class SimpleColorListParser: BaseColorListParser {
         
         if entry.isEmpty || entry.hasPrefix("#") {
             return nil // blank line or comment
-        } else if countElements(entry) < 8 {
+        } else if count(entry) < 8 {
             Log.warning("ignoring invalid entry: \(entry)")
             return nil // illegal entry (6 hex + 1 separator + min 1 name char)
         }

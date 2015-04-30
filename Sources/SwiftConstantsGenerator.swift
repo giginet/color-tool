@@ -27,6 +27,8 @@ class SwiftConstantsGenerator: ConstantsGenerator {
 
         contents += "// GENERATED FILE - DO NOT MODIFY\n"
         contents += "\n"
+        contents += "import UIKit\n"
+        contents += "\n"
         contents += "struct \(swiftClassName(colorList.name)) {\n"
         contents += "\n"
         contents += swiftEntries(colorList)

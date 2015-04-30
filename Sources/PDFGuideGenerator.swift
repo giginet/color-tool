@@ -65,7 +65,7 @@ class PDFGuideGenerator {
     private func drawEntry(entry: NamedColor, inContext context: NSGraphicsContext, rect: CGRect) {
         let partHeight = (rect.height / 3.0)
 
-        // draw the color blow
+        // draw the color below
         let colorBlobHeight = partHeight + 10.0
         let colorBlobRect = CGRect(x: rect.minX - 1.0, y: rect.maxY - colorBlobHeight, width: rect.width + 2.0, height: colorBlobHeight)
         entry.color.setFill()

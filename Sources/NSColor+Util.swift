@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import Foundation
 
 
 extension NSColor {
@@ -38,7 +39,9 @@ extension NSColor {
             return nil
         }
         
-        return NSColor(deviceRed:red, green:green, blue:blue, alpha:alpha)
+        let colorSpace = NSColorSpace.genericRGBColorSpace()
+        var components = [ red, green, blue, alpha ]
+        return self(colorSpace: colorSpace, components: &components, count: components.count)
     }
 
     func darkerColor() -> NSColor {
@@ -47,12 +50,12 @@ extension NSColor {
         var b: CGFloat = 0.0
         var a: CGFloat = 0.0
 
-        self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        getHue(&h, saturation: &s, brightness: &b, alpha: &a)
         b *= 0.75
         return NSColor(deviceHue: h, saturation: s, brightness: b, alpha: a)
     }
 
     var hexString: String {
-        return NSString(format: "#%02X%02X%02X", Int(self.redComponent * 255.0), Int(self.greenComponent * 255.0), Int(self.blueComponent * 255.0)) as String
+        return NSString(format: "#%02X%02X%02X", Int(redComponent * 255.0), Int(greenComponent * 255.0), Int(blueComponent * 255.0)) as String
     }
 }

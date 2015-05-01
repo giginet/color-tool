@@ -22,14 +22,18 @@ class CreateColorListCommand: ColorToolCommand {
         
         let outputURL = URLFromArguments(argv) ?? defaultURLFromURL(inputURL)
         writeColorList(colors, toFileAtURL: outputURL)
+        
+        if argv.flag("install") == true {
+            writeColorList(colors, toFileAtURL: nil)
+        }
     }
     
-    private func writeColorList(colorList: ColorList, toFileAtURL outputURL: NSURL) {
+    private func writeColorList(colorList: ColorList, toFileAtURL outputURL: NSURL?) {
         var clr = NSColorList(name: colorList.name)
         for color in colorList.colors {
             clr.insertColor(color.color, key: color.name, atIndex: clr.allKeys.count)
         }
-        clr.writeToFile(outputURL.path!)
+        clr.writeToFile(outputURL?.path)
     }
     
     private func defaultURLFromURL(url: NSURL) -> NSURL {
